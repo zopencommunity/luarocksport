@@ -1,8 +1,14 @@
-export ZOPEN_GIT_URL="https://github.com/luarocks/luarocks.git"
-export ZOPEN_GIT_DEPS="curl make lua unzip zip coreutils"
+# bump: luarocks-version /LUAROCKS_VERSION="(.*)"/ https://github.com/luarocks/luarocks.git|semver:*
+LUAROCKS_VERSION="3.9.2"
+
+export ZOPEN_BUILD_LINE="STABLE"
+export ZOPEN_STABLE_TAG="v${LUAROCKS_VERSION}"
+export ZOPEN_STABLE_URL="https://github.com/luarocks/luarocks.git"
+export ZOPEN_STABLE_DEPS="curl make lua unzip zip coreutils"
+export ZOPEN_DEV_URL="https://github.com/luarocks/luarocks.git"
+export ZOPEN_DEV_DEPS="curl make lua unzip zip coreutils"
 export ZOPEN_CONFIGURE_MINIMAL=yes
 export ZOPEN_CONFIGURE_OPTS="--with-lua-bin=\$LUA_HOME/bin --prefix=\$ZOPEN_INSTALL_DIR"
-export ZOPEN_TYPE="GIT"
 
 zopen_check_results()
 {
@@ -28,7 +34,5 @@ zopen_append_to_setup()
 
 zopen_get_version()
 {
-  # Modify to echo the version of your tool/library
-  # Rather than hardcoding the version, obtain the version by running the tool/library
-  echo "1.0.0"
+  echo "$LUAROCKS_VERSION"
 }
