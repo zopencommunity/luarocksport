@@ -2,6 +2,7 @@
 LUAROCKS_VERSION="3.11.1"
 
 export ZOPEN_BUILD_LINE="STABLE"
+export ZOPEN_CATEGORIES="library"
 export ZOPEN_STABLE_TAG="v${LUAROCKS_VERSION}"
 export ZOPEN_STABLE_URL="https://github.com/luarocks/luarocks.git"
 export ZOPEN_STABLE_DEPS="curl make lua unzip zip coreutils"
